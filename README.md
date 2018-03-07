@@ -1,3 +1,21 @@
+Fork for running xv6 on OSX High Sierra
+
+
+```
+# Need a version of toolchain that can compile elf files
+brew tap nativeos/i386-elf-toolchain
+brew install i386-elf-binutils i386-elf-gcc
+
+# Grab normal qemu
+brew install qemu
+
+# Run xv6 with i386 tool for elf
+# TOOLPREFIX is set in our fork with .env / .envrc
+make TOOLPREFIX=i386-elf- qemu-nox
+```
+
+### Original README
+
 xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
 Version 6 (v6).  xv6 loosely follows the structure and style of v6,
 but is implemented for a modern x86-based multiprocessor using ANSI C.
